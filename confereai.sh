@@ -9,7 +9,13 @@
 source ~/.zshrc
 
 # Set the proper directory for new tabs
-cd ~/Developer/confere-ai-rails 
+cd ~/Developer/confere-ai-rails
+
+# Switching directory for the current shell
+gotofolder()
+{
+  cd ~/Developer/confere-ai-rails
+}
 
 # GUARD Tab Setup for Tests
 ttab -G eval "title TESTS;color tests; bundle exec guard"
@@ -26,4 +32,5 @@ ttab -G eval "title VERSIONING;color versioning; git status"
 # RAILS SERVER Tab Setup as the Development Environment
 title DEVELOPMENT
 color development
-cd ~/Developer/confere-ai-rails; ./bin/rails s
+gotofolder
+./bin/rails s
